@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xDF7521218CD3E92C",
+      "boundary_crc": "0x3CE159190F0023AC",
       "device": "xczu3eg-sfvc784-2-e",
       "gen_directory": "../../../../termometr.gen/sources_1/bd/test_writeByte",
       "name": "test_writeByte",
@@ -12,7 +12,9 @@
     },
     "design_tree": {
       "writeByte_0": "",
-      "onebyte_0": ""
+      "onebyte_0": "",
+      "util_ds_buf_0": "",
+      "ilconstant_0": ""
     },
     "ports": {
       "Clk": {
@@ -26,20 +28,22 @@
       "start": {
         "direction": "I"
       },
-      "TT": {
-        "direction": "O"
-      },
       "Read_Out": {
         "direction": "O"
-      },
-      "IOBuf_In": {
-        "direction": "I"
       },
       "Read": {
         "direction": "I"
       },
       "Rst": {
         "direction": "I"
+      },
+      "busyWR_0": {
+        "direction": "O"
+      },
+      "IOBUF_IO_IO": {
+        "direction": "IO",
+        "left": "0",
+        "right": "0"
       }
     },
     "components": {
@@ -122,7 +126,21 @@
             "direction": "O"
           },
           "IOBuf_In": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "test_writeByte_util_ds_buf_0_0_IOBUF_IO_O",
+                "value_src": "default_prop"
+              }
+            }
           },
           "Busy": {
             "direction": "O"
@@ -131,6 +149,22 @@
             "direction": "O"
           }
         }
+      },
+      "util_ds_buf_0": {
+        "vlnv": "xilinx.com:ip:util_ds_buf:2.2",
+        "ip_revision": "8",
+        "xci_name": "test_writeByte_util_ds_buf_0_0",
+        "xci_path": "ip\\test_writeByte_util_ds_buf_0_0\\test_writeByte_util_ds_buf_0_0.xci",
+        "inst_hier_path": "util_ds_buf_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_BUF_TYPE": {
+            "value": "IOBUF"
+          }
+        }
+      },
+      "ilconstant_0": {
+        "vlnv": "xilinx.com:inline_hdl:ilconstant:1.0"
       }
     },
     "nets": {
@@ -141,10 +175,10 @@
           "onebyte_0/Clk"
         ]
       },
-      "IOBuf_In_1": {
+      "Net": {
         "ports": [
-          "IOBuf_In",
-          "onebyte_0/IOBuf_In"
+          "IOBUF_IO_IO",
+          "util_ds_buf_0/IOBUF_IO_IO"
         ]
       },
       "Read_1": {
@@ -165,6 +199,12 @@
           "writeByte_0/hex"
         ]
       },
+      "ilconstant_0_dout": {
+        "ports": [
+          "ilconstant_0/dout",
+          "util_ds_buf_0/IOBUF_IO_I"
+        ]
+      },
       "onebyte_0_Busy": {
         "ports": [
           "onebyte_0/Busy",
@@ -180,13 +220,25 @@
       "onebyte_0_TT": {
         "ports": [
           "onebyte_0/TT",
-          "TT"
+          "util_ds_buf_0/IOBUF_IO_T"
         ]
       },
       "start_1": {
         "ports": [
           "start",
           "writeByte_0/start"
+        ]
+      },
+      "util_ds_buf_0_IOBUF_IO_O": {
+        "ports": [
+          "util_ds_buf_0/IOBUF_IO_O",
+          "onebyte_0/IOBuf_In"
+        ]
+      },
+      "writeByte_0_busyWR": {
+        "ports": [
+          "writeByte_0/busyWR",
+          "busyWR_0"
         ]
       },
       "writeByte_0_out0": {

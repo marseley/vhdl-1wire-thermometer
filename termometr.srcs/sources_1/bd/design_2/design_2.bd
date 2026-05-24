@@ -1,0 +1,277 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x32251AF0F7E051C8",
+      "device": "xczu3eg-sfvc784-2-e",
+      "gen_directory": "../../../../termometr.gen/sources_1/bd/design_2",
+      "name": "design_2",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.1"
+    },
+    "design_tree": {
+      "onebyte_0": "",
+      "RotaryEnc_0": "",
+      "ilvector_logic_0": "",
+      "clk_wiz_0": "",
+      "util_ds_buf_0": "",
+      "ilconstant_0": ""
+    },
+    "interface_ports": {
+      "clk_100mhz": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
+        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          }
+        },
+        "port_maps": {
+          "CLK_N": {
+            "physical_name": "clk_100mhz_clk_n",
+            "direction": "I"
+          },
+          "CLK_P": {
+            "physical_name": "clk_100mhz_clk_p",
+            "direction": "I"
+          }
+        }
+      }
+    },
+    "ports": {
+      "Read_Out_0": {
+        "direction": "O"
+      },
+      "ROT_A_0": {
+        "direction": "I"
+      },
+      "ROT_B_0": {
+        "direction": "I"
+      },
+      "OW_Line": {
+        "direction": "IO",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "onebyte_0": {
+        "vlnv": "xilinx.com:module_ref:onebyte:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_2_onebyte_0_0",
+        "xci_path": "ip\\design_2_onebyte_0_0\\design_2_onebyte_0_0.xci",
+        "inst_hier_path": "onebyte_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "onebyte",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Wr1": {
+            "direction": "I"
+          },
+          "Wr0": {
+            "direction": "I"
+          },
+          "Read": {
+            "direction": "I"
+          },
+          "Rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "Clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_2_clk_wiz_0_1_clk_out1",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "TT": {
+            "direction": "O"
+          },
+          "IOBuf_In": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_2_util_ds_buf_0_1_IOBUF_IO_O",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Busy": {
+            "direction": "O"
+          },
+          "Read_Out": {
+            "direction": "O"
+          },
+          "Read_Ready": {
+            "direction": "O"
+          }
+        }
+      },
+      "RotaryEnc_0": {
+        "vlnv": "JS_WUST:UCiSW:RotaryEnc:1.0",
+        "ip_revision": "2",
+        "xci_name": "design_2_RotaryEnc_0_0",
+        "xci_path": "ip\\design_2_RotaryEnc_0_0\\design_2_RotaryEnc_0_0.xci",
+        "inst_hier_path": "RotaryEnc_0",
+        "has_run_ip_tcl": "true"
+      },
+      "ilvector_logic_0": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "ip_revision": "16",
+        "xci_name": "design_2_clk_wiz_0_1",
+        "xci_path": "ip\\design_2_clk_wiz_0_1\\design_2_clk_wiz_0_1.xci",
+        "inst_hier_path": "clk_wiz_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "clk_100mhz"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
+      "util_ds_buf_0": {
+        "vlnv": "xilinx.com:ip:util_ds_buf:2.2",
+        "ip_revision": "8",
+        "xci_name": "design_2_util_ds_buf_0_1",
+        "xci_path": "ip\\design_2_util_ds_buf_0_1\\design_2_util_ds_buf_0_1.xci",
+        "inst_hier_path": "util_ds_buf_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_BUF_TYPE": {
+            "value": "IOBUF"
+          }
+        }
+      },
+      "ilconstant_0": {
+        "vlnv": "xilinx.com:inline_hdl:ilconstant:1.0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "clk_100mhz_1": {
+        "interface_ports": [
+          "clk_100mhz",
+          "clk_wiz_0/CLK_IN1_D"
+        ]
+      }
+    },
+    "nets": {
+      "Net": {
+        "ports": [
+          "OW_Line",
+          "util_ds_buf_0/IOBUF_IO_IO"
+        ]
+      },
+      "ROT_A_0_1": {
+        "ports": [
+          "ROT_A_0",
+          "RotaryEnc_0/ROT_A"
+        ]
+      },
+      "ROT_B_0_1": {
+        "ports": [
+          "ROT_B_0",
+          "RotaryEnc_0/ROT_B"
+        ]
+      },
+      "RotaryEnc_0_RotL": {
+        "ports": [
+          "RotaryEnc_0/RotL",
+          "ilvector_logic_0/Op1"
+        ]
+      },
+      "RotaryEnc_0_RotR": {
+        "ports": [
+          "RotaryEnc_0/RotR",
+          "ilvector_logic_0/Op2"
+        ]
+      },
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "RotaryEnc_0/Clk",
+          "onebyte_0/Clk"
+        ]
+      },
+      "ilconstant_0_dout": {
+        "ports": [
+          "ilconstant_0/dout",
+          "util_ds_buf_0/IOBUF_IO_I",
+          "onebyte_0/Wr1",
+          "onebyte_0/Wr0",
+          "onebyte_0/Read"
+        ]
+      },
+      "ilvector_logic_0_Res": {
+        "ports": [
+          "ilvector_logic_0/Res",
+          "onebyte_0/Rst"
+        ]
+      },
+      "onebyte_0_Read_Out": {
+        "ports": [
+          "onebyte_0/Read_Out",
+          "Read_Out_0"
+        ]
+      },
+      "onebyte_0_TT": {
+        "ports": [
+          "onebyte_0/TT",
+          "util_ds_buf_0/IOBUF_IO_T"
+        ]
+      },
+      "util_ds_buf_0_IOBUF_IO_O": {
+        "ports": [
+          "util_ds_buf_0/IOBUF_IO_O",
+          "onebyte_0/IOBuf_In"
+        ]
+      }
+    }
+  }
+}

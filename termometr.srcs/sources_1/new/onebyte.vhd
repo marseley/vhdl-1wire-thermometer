@@ -43,7 +43,8 @@ entity onebyte is
            TT : out STD_LOGIC;
            IOBuf_In : in STD_LOGIC;
            Busy : out STD_LOGIC;
-           Read_Out : out STD_LOGIC := '0');
+           Read_Out : out STD_LOGIC := '0';
+           Read_Ready : out STD_LOGIC);
 end onebyte;
 
 architecture Behavioral of onebyte is
@@ -150,6 +151,8 @@ begin
         if rising_edge(clk) then
             if state = RD_C or state = RST_C then
                 Read_Out <= IOBuf_In;
+                Read_Ready <= '1';
+            else Read_Ready<='0';
             end if;
         end if;
     end process process4;

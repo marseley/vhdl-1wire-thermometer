@@ -1,0 +1,319 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xAF4DEBC4C045601",
+      "device": "xczu3eg-sfvc784-2-e",
+      "gen_directory": "../../../../termometr.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "onebyte_0": "",
+      "writeByte_0": "",
+      "util_ds_buf_0": "",
+      "xlconstant_0": ""
+    },
+    "ports": {
+      "hex_0": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "start_0": {
+        "direction": "I"
+      },
+      "Clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "Rst_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_1_Clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "IOBUF_IO_IO_0": {
+        "direction": "IO",
+        "left": "0",
+        "right": "0"
+      },
+      "Read_0": {
+        "direction": "I"
+      },
+      "Rst_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "Read_Out_0": {
+        "direction": "O"
+      },
+      "Read_Ready_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "onebyte_0": {
+        "vlnv": "xilinx.com:module_ref:onebyte:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_onebyte_0_0",
+        "xci_path": "ip\\design_1_onebyte_0_0\\design_1_onebyte_0_0.xci",
+        "inst_hier_path": "onebyte_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "onebyte",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Wr1": {
+            "direction": "I"
+          },
+          "Wr0": {
+            "direction": "I"
+          },
+          "Read": {
+            "direction": "I"
+          },
+          "Rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "Clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_Clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "TT": {
+            "direction": "O"
+          },
+          "IOBuf_In": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_util_ds_buf_0_0_IOBUF_IO_O",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Busy": {
+            "direction": "O"
+          },
+          "Read_Out": {
+            "direction": "O"
+          },
+          "Read_Ready": {
+            "direction": "O"
+          }
+        }
+      },
+      "writeByte_0": {
+        "vlnv": "xilinx.com:module_ref:writeByte:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_writeByte_0_0",
+        "xci_path": "ip\\design_1_writeByte_0_0\\design_1_writeByte_0_0.xci",
+        "inst_hier_path": "writeByte_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "writeByte",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "hex": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "start": {
+            "direction": "I"
+          },
+          "busy": {
+            "direction": "I"
+          },
+          "Clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_Clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "busyWR": {
+            "direction": "O"
+          },
+          "out1": {
+            "direction": "O"
+          },
+          "out0": {
+            "direction": "O"
+          }
+        }
+      },
+      "util_ds_buf_0": {
+        "vlnv": "xilinx.com:ip:util_ds_buf:2.2",
+        "ip_revision": "8",
+        "xci_name": "design_1_util_ds_buf_0_0",
+        "xci_path": "ip\\design_1_util_ds_buf_0_0\\design_1_util_ds_buf_0_0.xci",
+        "inst_hier_path": "util_ds_buf_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_BUF_TYPE": {
+            "value": "IOBUF"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "10",
+        "xci_name": "design_1_xlconstant_0_0",
+        "xci_path": "ip\\design_1_xlconstant_0_0\\design_1_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Clk_0_1": {
+        "ports": [
+          "Clk_0",
+          "writeByte_0/Clk",
+          "onebyte_0/Clk"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "IOBUF_IO_IO_0",
+          "util_ds_buf_0/IOBUF_IO_IO"
+        ]
+      },
+      "Read_0_1": {
+        "ports": [
+          "Read_0",
+          "onebyte_0/Read"
+        ]
+      },
+      "Rst_0_1": {
+        "ports": [
+          "Rst_0",
+          "onebyte_0/Rst"
+        ]
+      },
+      "hex_0_1": {
+        "ports": [
+          "hex_0",
+          "writeByte_0/hex"
+        ]
+      },
+      "onebyte_0_Busy": {
+        "ports": [
+          "onebyte_0/Busy",
+          "writeByte_0/busy"
+        ]
+      },
+      "onebyte_0_Read_Out": {
+        "ports": [
+          "onebyte_0/Read_Out",
+          "Read_Out_0"
+        ]
+      },
+      "onebyte_0_Read_Ready": {
+        "ports": [
+          "onebyte_0/Read_Ready",
+          "Read_Ready_0"
+        ]
+      },
+      "onebyte_0_TT": {
+        "ports": [
+          "onebyte_0/TT",
+          "util_ds_buf_0/IOBUF_IO_T"
+        ]
+      },
+      "start_0_1": {
+        "ports": [
+          "start_0",
+          "writeByte_0/start"
+        ]
+      },
+      "util_ds_buf_0_IOBUF_IO_O": {
+        "ports": [
+          "util_ds_buf_0/IOBUF_IO_O",
+          "onebyte_0/IOBuf_In"
+        ]
+      },
+      "writeByte_0_out0": {
+        "ports": [
+          "writeByte_0/out0",
+          "onebyte_0/Wr0"
+        ]
+      },
+      "writeByte_0_out1": {
+        "ports": [
+          "writeByte_0/out1",
+          "onebyte_0/Wr1"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "util_ds_buf_0/IOBUF_IO_I"
+        ]
+      }
+    }
+  }
+}
