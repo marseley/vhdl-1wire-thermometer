@@ -1,0 +1,32 @@
+# --- Pliki tymczasowe Vivado ---
+*.jou
+*.log
+*.str
+*.zip
+*.tmp
+*.debug
+*.os
+*.js
+
+# --- Foldery projektowe (generowane automatycznie) ---
+.Xil/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.runs/
+*.sdk/
+*.data/
+.metadata/
+
+# --- Pliki binarne i raporty ---
+*.dcp
+*.pb
+*.rpt
+*.vdi
+*.bxml
+*.hwdef
+
+# --- Systemowe ---
+.DS_Store
+Thumbs.db

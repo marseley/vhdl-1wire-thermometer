@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="onebyte_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="onebyte_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="69,730.760 ns"></ZoomStartTime>
+      <ZoomEndTime time="76,105.761 ns"></ZoomEndTime>
+      <Cursor1Time time="16,015.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/onebyte_tb/Wr1" type="logic">
+      <obj_property name="ElementShortName">Wr1</obj_property>
+      <obj_property name="ObjectShortName">Wr1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/onebyte_tb/Wr0" type="logic">
+      <obj_property name="ElementShortName">Wr0</obj_property>
+      <obj_property name="ObjectShortName">Wr0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/onebyte_tb/Read" type="logic">
+      <obj_property name="ElementShortName">Read</obj_property>
+      <obj_property name="ObjectShortName">Read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/onebyte_tb/Rst" type="logic">
+      <obj_property name="ElementShortName">Rst</obj_property>
+      <obj_property name="ObjectShortName">Rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/onebyte_tb/Clk" type="logic">
+      <obj_property name="ElementShortName">Clk</obj_property>
+      <obj_property name="ObjectShortName">Clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/onebyte_tb/T" type="logic">
+      <obj_property name="ElementShortName">T</obj_property>
+      <obj_property name="ObjectShortName">T</obj_property>
+   </wvobject>
+   <wvobject fp_name="/onebyte_tb/IOBuf_In" type="logic">
+      <obj_property name="ElementShortName">IOBuf_In</obj_property>
+      <obj_property name="ObjectShortName">IOBuf_In</obj_property>
+   </wvobject>
+   <wvobject fp_name="/onebyte_tb/Busy" type="logic">
+      <obj_property name="ElementShortName">Busy</obj_property>
+      <obj_property name="ObjectShortName">Busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/onebyte_tb/Read_Out" type="logic">
+      <obj_property name="ElementShortName">Read_Out</obj_property>
+      <obj_property name="ObjectShortName">Read_Out</obj_property>
+   </wvobject>
+</wave_config>
