@@ -17,6 +17,7 @@
 *.runs/
 *.sdk/
 *.data/
+*.gen/
 .metadata/
 
 # --- Pliki binarne i raporty ---

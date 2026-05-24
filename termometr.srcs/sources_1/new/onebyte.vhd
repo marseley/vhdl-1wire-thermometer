@@ -21,7 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+--use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 
@@ -40,14 +40,14 @@ entity onebyte is
            Read : in STD_LOGIC;
            Rst : in STD_LOGIC;
            Clk : in STD_LOGIC;
-           T : out STD_LOGIC;
+           TT : out STD_LOGIC;
            IOBuf_In : in STD_LOGIC;
            Busy : out STD_LOGIC;
-           Read_Out : out STD_LOGIC);
+           Read_Out : out STD_LOGIC := '0');
 end onebyte;
 
 architecture Behavioral of onebyte is
-signal interBusy: STD_LOGIC := '0';
+--signal interBusy: STD_LOGIC := '0';
 signal counter: UNSIGNED(17 downto 0) := (others => '0');
 
 type state_type is (IDLE, WR1_A, WR1_B, WR0_A, WR0_B, RD_A, RD_B, RD_C, RD_D, RST_A, RST_B, RST_C, RST_D);
@@ -137,16 +137,22 @@ begin
         end if;
         
         if state = WR1_A or state = WR0_A or state = RST_A or state = RD_A then
-            T <= '0';
+            TT <= '0';
         else
-            T <= '1';
+            TT <= '1';
         end if;
-        
-        if state = RD_C or state = RST_C then
-            Read_Out <= IOBuf_In;
-        end if;
-    
+                                
     end process process3;
+    
+    
+    process4: process(clk, state)
+    begin 
+        if rising_edge(clk) then
+            if state = RD_C or state = RST_C then
+                Read_Out <= IOBuf_In;
+            end if;
+        end if;
+    end process process4;
     
        
     CounterLoop: process(clk)

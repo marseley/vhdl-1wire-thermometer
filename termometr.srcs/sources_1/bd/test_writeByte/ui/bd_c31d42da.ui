@@ -1,0 +1,33 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-668,-276",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace port port-id_Clk -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port port-id_start -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port port-id_TT -pg 1 -lvl 3 -x 520 -y 170 -defaultsOSRD
+preplace port port-id_Read_Out -pg 1 -lvl 3 -x 520 -y 210 -defaultsOSRD
+preplace port port-id_IOBuf_In -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
+preplace port port-id_Read -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace port port-id_Rst -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace portBus hex -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace inst writeByte_0 -pg 1 -lvl 1 -x 140 -y 90 -defaultsOSRD
+preplace inst onebyte_0 -pg 1 -lvl 2 -x 380 -y 190 -defaultsOSRD
+preplace netloc writeByte_0_out1 1 1 1 260 90n
+preplace netloc writeByte_0_out0 1 1 1 250 110n
+preplace netloc onebyte_0_Busy 1 0 3 30 300 NJ 300 500
+preplace netloc Clk_1 1 0 2 20 220 NJ
+preplace netloc hex_1 1 0 1 NJ 60
+preplace netloc start_1 1 0 1 NJ 80
+preplace netloc onebyte_0_TT 1 2 1 NJ 170
+preplace netloc onebyte_0_Read_Out 1 2 1 NJ 210
+preplace netloc IOBuf_In_1 1 0 2 NJ 240 NJ
+preplace netloc Read_1 1 0 2 NJ 180 NJ
+preplace netloc Rst_1 1 0 2 NJ 200 NJ
+levelinfo -pg 1 0 140 380 520
+pagesize -pg 1 -db -bbox -sgen -110 0 640 310
+"
+}
+

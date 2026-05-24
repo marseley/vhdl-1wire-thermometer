@@ -1,0 +1,206 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xDF7521218CD3E92C",
+      "device": "xczu3eg-sfvc784-2-e",
+      "gen_directory": "../../../../termometr.gen/sources_1/bd/test_writeByte",
+      "name": "test_writeByte",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "writeByte_0": "",
+      "onebyte_0": ""
+    },
+    "ports": {
+      "Clk": {
+        "direction": "I"
+      },
+      "hex": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "start": {
+        "direction": "I"
+      },
+      "TT": {
+        "direction": "O"
+      },
+      "Read_Out": {
+        "direction": "O"
+      },
+      "IOBuf_In": {
+        "direction": "I"
+      },
+      "Read": {
+        "direction": "I"
+      },
+      "Rst": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "writeByte_0": {
+        "vlnv": "xilinx.com:module_ref:writeByte:1.0",
+        "ip_revision": "1",
+        "xci_name": "test_writeByte_writeByte_0_0",
+        "xci_path": "ip\\test_writeByte_writeByte_0_0\\test_writeByte_writeByte_0_0.xci",
+        "inst_hier_path": "writeByte_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "writeByte",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "hex": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "start": {
+            "direction": "I"
+          },
+          "busy": {
+            "direction": "I"
+          },
+          "Clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "busyWR": {
+            "direction": "O"
+          },
+          "out1": {
+            "direction": "O"
+          },
+          "out0": {
+            "direction": "O"
+          }
+        }
+      },
+      "onebyte_0": {
+        "vlnv": "xilinx.com:module_ref:onebyte:1.0",
+        "ip_revision": "1",
+        "xci_name": "test_writeByte_onebyte_0_0",
+        "xci_path": "ip\\test_writeByte_onebyte_0_0\\test_writeByte_onebyte_0_0.xci",
+        "inst_hier_path": "onebyte_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "onebyte",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Wr1": {
+            "direction": "I"
+          },
+          "Wr0": {
+            "direction": "I"
+          },
+          "Read": {
+            "direction": "I"
+          },
+          "Rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "Clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "TT": {
+            "direction": "O"
+          },
+          "IOBuf_In": {
+            "direction": "I"
+          },
+          "Busy": {
+            "direction": "O"
+          },
+          "Read_Out": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Clk_1": {
+        "ports": [
+          "Clk",
+          "writeByte_0/Clk",
+          "onebyte_0/Clk"
+        ]
+      },
+      "IOBuf_In_1": {
+        "ports": [
+          "IOBuf_In",
+          "onebyte_0/IOBuf_In"
+        ]
+      },
+      "Read_1": {
+        "ports": [
+          "Read",
+          "onebyte_0/Read"
+        ]
+      },
+      "Rst_1": {
+        "ports": [
+          "Rst",
+          "onebyte_0/Rst"
+        ]
+      },
+      "hex_1": {
+        "ports": [
+          "hex",
+          "writeByte_0/hex"
+        ]
+      },
+      "onebyte_0_Busy": {
+        "ports": [
+          "onebyte_0/Busy",
+          "writeByte_0/busy"
+        ]
+      },
+      "onebyte_0_Read_Out": {
+        "ports": [
+          "onebyte_0/Read_Out",
+          "Read_Out"
+        ]
+      },
+      "onebyte_0_TT": {
+        "ports": [
+          "onebyte_0/TT",
+          "TT"
+        ]
+      },
+      "start_1": {
+        "ports": [
+          "start",
+          "writeByte_0/start"
+        ]
+      },
+      "writeByte_0_out0": {
+        "ports": [
+          "writeByte_0/out0",
+          "onebyte_0/Wr0"
+        ]
+      },
+      "writeByte_0_out1": {
+        "ports": [
+          "writeByte_0/out1",
+          "onebyte_0/Wr1"
+        ]
+      }
+    }
+  }
+}
