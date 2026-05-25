@@ -141,6 +141,9 @@ set_property IOSTANDARD LVCMOS12 [get_ports Read_Out_0]
 #set_property PACKAGE_PIN J14 [get_ports CAM0_OUT[3]];
 #set_property IOSTANDARD LVCMOS33 [get_ports CAM0_OUT[3]];
 
+set_property PACKAGE_PIN A10   [get_ports {OW_Line[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports OW_Line[0]]
+set_property PULLTYPE PULLUP [get_ports {OW_Line[0]}]
 
 #################### Current design globals ####################
 

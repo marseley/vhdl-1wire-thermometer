@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xAF4DEBC4C045601",
+      "boundary_crc": "0x284276BA5FED4F11",
       "device": "xczu3eg-sfvc784-2-e",
       "gen_directory": "../../../../termometr.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -14,17 +14,13 @@
       "onebyte_0": "",
       "writeByte_0": "",
       "util_ds_buf_0": "",
-      "xlconstant_0": ""
+      "xlconstant_0": "",
+      "readbyte_0": "",
+      "DS18S20_Controller_0": "",
+      "ilvector_logic_0": "",
+      "ilvector_logic_1": ""
     },
     "ports": {
-      "hex_0": {
-        "direction": "I",
-        "left": "7",
-        "right": "0"
-      },
-      "start_0": {
-        "direction": "I"
-      },
       "Clk_0": {
         "type": "clk",
         "direction": "I",
@@ -60,10 +56,15 @@
         "left": "0",
         "right": "0"
       },
-      "Read_0": {
+      "temp_data_0": {
+        "direction": "O",
+        "left": "15",
+        "right": "0"
+      },
+      "start_meas_0": {
         "direction": "I"
       },
-      "Rst_0": {
+      "reset_n_0": {
         "type": "rst",
         "direction": "I",
         "parameters": {
@@ -76,12 +77,6 @@
             "value_src": "default"
           }
         }
-      },
-      "Read_Out_0": {
-        "direction": "O"
-      },
-      "Read_Ready_0": {
-        "direction": "O"
       }
     },
     "components": {
@@ -146,7 +141,17 @@
             }
           },
           "Busy": {
-            "direction": "O"
+            "direction": "O",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "Read_Out": {
             "direction": "O"
@@ -178,7 +183,17 @@
             "direction": "I"
           },
           "busy": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "Clk": {
             "type": "clk",
@@ -191,7 +206,17 @@
             }
           },
           "busyWR": {
-            "direction": "O"
+            "direction": "O",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "out1": {
             "direction": "O"
@@ -226,6 +251,169 @@
             "value": "0"
           }
         }
+      },
+      "readbyte_0": {
+        "vlnv": "xilinx.com:module_ref:readbyte:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_readbyte_0_0",
+        "xci_path": "ip\\design_1_readbyte_0_0\\design_1_readbyte_0_0.xci",
+        "inst_hier_path": "readbyte_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "readbyte",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "hex": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "start": {
+            "direction": "I"
+          },
+          "busy": {
+            "direction": "I",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "Clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_Clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "busyRD": {
+            "direction": "O",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "outRD": {
+            "direction": "O"
+          },
+          "read": {
+            "direction": "I"
+          },
+          "read_ready": {
+            "direction": "I"
+          }
+        }
+      },
+      "DS18S20_Controller_0": {
+        "vlnv": "xilinx.com:module_ref:DS18S20_Controller:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_DS18S20_Controller_0_0",
+        "xci_path": "ip\\design_1_DS18S20_Controller_0_0\\design_1_DS18S20_Controller_0_0.xci",
+        "inst_hier_path": "DS18S20_Controller_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DS18S20_Controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_Clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "start_meas": {
+            "direction": "I"
+          },
+          "ow_reset": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "ow_write_b": {
+            "direction": "O"
+          },
+          "ow_read_b": {
+            "direction": "O"
+          },
+          "ow_done": {
+            "direction": "I",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "ow_data_tx": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "ow_data_rx": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "presence_pulse": {
+            "direction": "I"
+          },
+          "temp_data": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "ilvector_logic_0": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "ilvector_logic_1": {
+        "vlnv": "xilinx.com:inline_hdl:ilvector_logic:1.0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
       }
     },
     "nets": {
@@ -233,7 +421,39 @@
         "ports": [
           "Clk_0",
           "writeByte_0/Clk",
-          "onebyte_0/Clk"
+          "onebyte_0/Clk",
+          "readbyte_0/Clk",
+          "DS18S20_Controller_0/clk"
+        ]
+      },
+      "DS18S20_Controller_0_ow_data_tx": {
+        "ports": [
+          "DS18S20_Controller_0/ow_data_tx",
+          "writeByte_0/hex"
+        ]
+      },
+      "DS18S20_Controller_0_ow_read_b": {
+        "ports": [
+          "DS18S20_Controller_0/ow_read_b",
+          "readbyte_0/start"
+        ]
+      },
+      "DS18S20_Controller_0_ow_reset": {
+        "ports": [
+          "DS18S20_Controller_0/ow_reset",
+          "onebyte_0/Rst"
+        ]
+      },
+      "DS18S20_Controller_0_ow_write_b": {
+        "ports": [
+          "DS18S20_Controller_0/ow_write_b",
+          "writeByte_0/start"
+        ]
+      },
+      "DS18S20_Controller_0_temp_data": {
+        "ports": [
+          "DS18S20_Controller_0/temp_data",
+          "temp_data_0"
         ]
       },
       "Net": {
@@ -242,40 +462,37 @@
           "util_ds_buf_0/IOBUF_IO_IO"
         ]
       },
-      "Read_0_1": {
+      "ilvector_logic_0_Res": {
         "ports": [
-          "Read_0",
-          "onebyte_0/Read"
+          "ilvector_logic_0/Res",
+          "DS18S20_Controller_0/ow_done"
         ]
       },
-      "Rst_0_1": {
+      "ilvector_logic_1_Res": {
         "ports": [
-          "Rst_0",
-          "onebyte_0/Rst"
-        ]
-      },
-      "hex_0_1": {
-        "ports": [
-          "hex_0",
-          "writeByte_0/hex"
+          "ilvector_logic_1/Res",
+          "ilvector_logic_0/Op2"
         ]
       },
       "onebyte_0_Busy": {
         "ports": [
           "onebyte_0/Busy",
-          "writeByte_0/busy"
+          "writeByte_0/busy",
+          "readbyte_0/busy",
+          "ilvector_logic_1/Op2"
         ]
       },
       "onebyte_0_Read_Out": {
         "ports": [
           "onebyte_0/Read_Out",
-          "Read_Out_0"
+          "DS18S20_Controller_0/presence_pulse",
+          "readbyte_0/read"
         ]
       },
       "onebyte_0_Read_Ready": {
         "ports": [
           "onebyte_0/Read_Ready",
-          "Read_Ready_0"
+          "readbyte_0/read_ready"
         ]
       },
       "onebyte_0_TT": {
@@ -284,16 +501,46 @@
           "util_ds_buf_0/IOBUF_IO_T"
         ]
       },
-      "start_0_1": {
+      "readbyte_0_busyRD": {
         "ports": [
-          "start_0",
-          "writeByte_0/start"
+          "readbyte_0/busyRD",
+          "ilvector_logic_1/Op1"
+        ]
+      },
+      "readbyte_0_hex": {
+        "ports": [
+          "readbyte_0/hex",
+          "DS18S20_Controller_0/ow_data_rx"
+        ]
+      },
+      "readbyte_0_outRD": {
+        "ports": [
+          "readbyte_0/outRD",
+          "onebyte_0/Read"
+        ]
+      },
+      "reset_n_0_1": {
+        "ports": [
+          "reset_n_0",
+          "DS18S20_Controller_0/reset_n"
+        ]
+      },
+      "start_meas_0_1": {
+        "ports": [
+          "start_meas_0",
+          "DS18S20_Controller_0/start_meas"
         ]
       },
       "util_ds_buf_0_IOBUF_IO_O": {
         "ports": [
           "util_ds_buf_0/IOBUF_IO_O",
           "onebyte_0/IOBuf_In"
+        ]
+      },
+      "writeByte_0_busyWR": {
+        "ports": [
+          "writeByte_0/busyWR",
+          "ilvector_logic_0/Op1"
         ]
       },
       "writeByte_0_out0": {
